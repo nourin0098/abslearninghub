@@ -1,8 +1,18 @@
-.wrapper{
+.wrapper {
     width: 90%;
     margin: 0 auto;
-}
-
-body {
+  }
+  
+  body {
     font-family: "Poppins", sans-serif;
-}
+  }
+  
+  @keyframes gradient {
+    to {
+      background-position: 200% center;
+    }
+  }
+  
+  .animation1 {
+    animation: gradient 8s linear infinite;
+  }
