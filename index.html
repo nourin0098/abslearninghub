@@ -28,12 +28,12 @@
                 </div>
                 <ul id="navbar-default" class="hidden md:flex flex-col md:flex-row justify-center items-center md:items-center mr-10">
                     <li class="mr-7"><a href="#" class="text-[16px] font-semibold">Home</a></li>
-                    <li class="mr-7"><a href="#" class="text-[16px] font-semibold">About us</a></li>
-                    <li class="mr-7"><a href="#" class="text-[16px] font-semibold">Our courses</a></li>
-                    <li class="mr-7"><a href="#" class="text-[16px] font-semibold">Our subjects</a></li>
-                    <li><a href="#" class="text-[14px] font-semibold">Contact us</a></li>
+                    <li class="mr-7"><a href="#goal-section" class="text-[16px] font-semibold">Our goal</a></li>
+                    <li class="mr-7"><a href="#about-section" class="text-[16px] font-semibold">About us</a></li>
+                    <li class="mr-7"><a href="#course-section" class="text-[16px] font-semibold">Our courses</a></li>
+                    <li class="mr-7"><a href="#subject-section" class="text-[16px] font-semibold">Our subjects</a></li>
+                    <li><a href="#contact-section" class="text-[14px] font-semibold">Contact us</a></li>
                 </ul>
-                
             </header>
             <section class="wrapper">
                 <div class="py-10 flex justify-between items-center flex-wrap">
@@ -54,7 +54,7 @@
         </section>
     </section>
 
-    <section class="py-10 md:py-20">
+    <section class="py-10 md:py-20" id="goal-section">
         <div>
             <h1 class="text-center text-[30px] lg:text-[40px] text-blue-950 font-bold mb-10 lg:mb-20">Our Goal</h1>
         </div>
@@ -63,14 +63,13 @@
                 <img src="images/abin.jpg" alt="image" class="rounded-3xl w-auto h-80 md:h-96 object-cover aspect-auto">
             </div>
             <div class="w-full md:w-[60%] mr-0 md:mr-10">
-                <!-- <h3 class="text-[22px] font-bold text-[#3858D6] mb-5">Our Goal</h3> -->
                 <p class="text-[14px] md:text-[18px] font-semibold text-justify text-blue-950 leading-7">"Empowerment of students for their all-around development through education is our cherished motto. Today education means much more than merely acquiring knowledge. It is acquisition of knowledge and skills, building character and improving the employability of our young talent, the future leadership. I am sure, the heritage of AB's imbibed provides them a strong foundation to march ahead for a stronger and brighter future."</p>
                 <h3 class="text-[16px] md:text-[18px] font-bold text-[#3858D6] mt-5">-Abin K (Founder)</h3>
             </div>
         </section>
     </section>
 
-    <section class="py-10">
+    <section class="py-10" id="about-section">
         <section class="wrapper sm:w-[90%]">
             <div>
                 <h1 class="text-center text-[30px] lg:text-[40px] text-blue-950 font-bold mb-10 lg:mb-20">About Us</h1>
@@ -99,7 +98,7 @@
     </section>
 
 
-    <section class="py-5 lg:py-10">
+    <section class="py-5 lg:py-10" id="course-section">
         <section class="wrapper w-[90%]">
             <div>
                 <h1 class="text-center text-[30px] lg:text-[40px] text-blue-950 font-bold mb-10 lg:mb-20">Our Cources</h1>
@@ -133,7 +132,7 @@
         </section>
     </section>
 
-    <section class="py-5 lg:py-10 mb-10">
+    <section class="py-5 lg:py-10 mb-10" id="subject-section">
         <section class="wrapper w-[90%]">
             <div>
                 <h1 class="text-center text-[30px] lg:text-[40px] text-blue-950 font-bold mb-10 lg:mb-20">Our Subjects</h1>
@@ -172,7 +171,7 @@
         </section>
     </section>
 
-    <section class="py-5 lg:py-10 bg-gray-100 border-b">
+    <section class="py-5 lg:py-10 bg-gray-100 border-b" id="contact-section">
         <section class="wrapper mx-auto">
             <h1 class="text-center text-[30px] lg:text-[40px] text-blue-950 font-bold mb-10 lg:mb-20">Contact Us</h1>
             <div class="flex flex-col md:flex-row gap-14">
@@ -276,6 +275,26 @@
             });
         });
     </script>     -->
+
+    <!--
+        nav bar fixing
+        <script>
+        const header = document.getElementById('main-header');
+        const goalSectionOffset = document.getElementById('goal-section').offsetTop;
+        const aboutSectionOffset = document.getElementById('about-section').offsetTop;
+        function changeHeaderColor() {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition >= goalSectionOffset) {
+                header.style.backgroundColor = 'whitesmoke';
+            } 
+            else if (scrollPosition >= aboutSectionOffset) {
+                header.style.backgroundColor = '#d3d3d3'; 
+            } else {
+                header.style.backgroundColor = 'white';
+            }
+        }
+        window.addEventListener('scroll', changeHeaderColor);
+    </script> -->
     
 
 </body>
