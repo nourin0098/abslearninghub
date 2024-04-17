@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <section class="text-blue-950 bg-[whitesmoke]">
+    <section class="text-blue-950 bg-[whitesmoke]" id="home-section">
         <section class="wrapper w-[100%]">
             <header class="h-[100px] flex justify-between items-center bg-white">
                 <h1>
@@ -24,16 +24,25 @@
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                         </svg>
-                    </button>
+                    </button>                    
                 </div>
                 <ul id="navbar-default" class="hidden md:flex flex-col md:flex-row justify-center items-center md:items-center mr-10">
-                    <li class="mr-7"><a href="#" class="text-[16px] font-semibold">Home</a></li>
+                    <li class="mr-7"><a href="#home-section" class="text-[16px] font-semibold">Home</a></li>
                     <li class="mr-7"><a href="#goal-section" class="text-[16px] font-semibold">Our goal</a></li>
                     <li class="mr-7"><a href="#about-section" class="text-[16px] font-semibold">About us</a></li>
                     <li class="mr-7"><a href="#course-section" class="text-[16px] font-semibold">Our courses</a></li>
                     <li class="mr-7"><a href="#subject-section" class="text-[16px] font-semibold">Our subjects</a></li>
                     <li><a href="#contact-section" class="text-[14px] font-semibold">Contact us</a></li>
                 </ul>
+                <ul class="md:hidden absolute top-24 left-0 right-0 bg-white w-full py-4 px-2 flex flex-col items-center border border-b" id="mobile-nav-menu">
+                    <li class="mb-3"><a href="#home-section" class="text-[16px] font-semibold">Home</a></li>
+                    <li class="mb-3"><a href="#goal-section" class="text-[16px] font-semibold">Our goal</a></li>
+                    <li class="mb-3"><a href="#about-section" class="text-[16px] font-semibold">About us</a></li>
+                    <li class="mb-3"><a href="#course-section" class="text-[16px] font-semibold">Our courses</a></li>
+                    <li class="mb-3"><a href="#subject-section" class="text-[16px] font-semibold">Our subjects</a></li>
+                    <li><a href="#contact-section" class="text-[14px] font-semibold">Contact us</a></li>
+                </ul>
+
             </header>
             <section class="wrapper">
                 <div class="py-10 flex justify-between items-center flex-wrap">
@@ -265,16 +274,16 @@
         </section>
     </footer>
     
-    <!-- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('navbar-default');
-            
+            const mobileNavMenu = document.getElementById('mobile-nav-menu');
+
             mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
+                mobileNavMenu.classList.toggle('hidden');
             });
         });
-    </script>     -->
+    </script>    
 
     <!--
         nav bar fixing
