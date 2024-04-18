@@ -16,11 +16,16 @@
   <body>
     <section class="text-blue-950 bg-[whitesmoke]" id="home-section">
       <section class="wrapper w-[100%]">
-        <header class="h-[100px] flex justify-between items-center bg-white">
+        <header
+          id="header"
+          class="h-[100px] flex justify-between items-center bg-white fixed w-screen transition-all top-0 data-[hide]:-top-72"
+        >
           <h1>
-            <img src="images/logo.png" alt="image" class="w-32" />
+            <a href="#home-section">
+              <img src="images/logo.png" alt="image" class="w-32" />
+            </a>
           </h1>
-          <div class="flex justify-end items-center mr-5">
+          <div class="flex justify-end items-center mr-5 flex-wrap">
             <button
               data-collapse-toggle="navbar-default"
               type="button"
@@ -51,14 +56,14 @@
             id="navbar-default"
             class="hidden md:flex flex-col md:flex-row justify-center items-center md:items-center mr-10"
           >
-            <li class="hover:bg-slate-100 hover:rounded-2xl">
+            <!-- <li class="hover:rounded-2xl">
               <a
                 href="#home-section"
                 class="text-[16px] p-3 hover:bg-slate-100 font-semibold rounded-2xl transition-all"
                 >Home</a
               >
-            </li>
-            <li class="hover:bg-slate-100 hover:rounded-2xl">
+            </li> -->
+            <li class="">
               <a
                 href="#goal-section"
                 class="text-[16px] p-3 hover:bg-slate-100 font-semibold rounded-2xl transition-all"
@@ -161,7 +166,7 @@
           </ul>
         </header>
         <section class="wrapper">
-          <div class="py-10 flex justify-between items-center flex-wrap">
+          <div class="py-10 pt-36 flex justify-between items-center flex-wrap">
             <div class="w-full md:w-[50%]">
               <h1 class="text-[35px] md:text-[50px] font-extrabold mb-10">
                 Bright Your Future With
@@ -568,7 +573,7 @@
                 </a>
               </div>
               <div class="rounded-full bg-[#e3e3e3] p-2 hover:bg-slate-200">
-                <a href="https://www.linkedin.com/in/ab-s-learninghub-bb5606304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                <a href=""
                   ><span class="[&>svg]:h-6 [&>svg]:w-6 [&>svg]:fill-[#0077b5]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -656,7 +661,7 @@
       <section class="p-5">
         <div>
           <p class="text-blue-950 text-center font-semibold text-[14px]">
-            ©️ AB'S Learning Hub 2024 All rights reserved.
+            Copyright 2024 abslearninghub7025@gmail.com. All Rights Reserved.
           </p>
         </div>
       </section>
@@ -717,24 +722,26 @@
         });
       });
     </script>
-    <!--
-        nav bar fixing
-        <script>
-        const header = document.getElementById('main-header');
-        const goalSectionOffset = document.getElementById('goal-section').offsetTop;
-        const aboutSectionOffset = document.getElementById('about-section').offsetTop;
-        function changeHeaderColor() {
-            const scrollPosition = window.scrollY;
-            if (scrollPosition >= goalSectionOffset) {
-                header.style.backgroundColor = 'whitesmoke';
-            } 
-            else if (scrollPosition >= aboutSectionOffset) {
-                header.style.backgroundColor = '#d3d3d3'; 
-            } else {
-                header.style.backgroundColor = 'white';
-            }
-        }
-        window.addEventListener('scroll', changeHeaderColor);
-    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        document.addEventListener("scroll", (e) => {
+          const currentScrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          if (currentScrollTop > lastScrollTop) {
+            header.setAttribute("data-hide", "true");
+            hideMobileMenu();
+          } else {
+            header.removeAttribute("data-hide");
+          }
+
+          lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        });
+      });
+    </script>
   </body>
 </html>
