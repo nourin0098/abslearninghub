@@ -21,7 +21,7 @@
           class="h-[100px] flex justify-between items-center bg-white fixed w-screen transition-all top-0 data-[hide]:-top-72"
         >
           <h1>
-            <a href="#home-section">
+            <a href="/">
               <img src="images/logo.png" alt="image" class="w-32" />
             </a>
           </h1>
@@ -304,7 +304,7 @@
             </ul>
           </div>
           <div class="w-full md:w-[45%]">
-            <img src="images/about.png" alt="image" class="w-full" />
+            <img src="images/about.webp" alt="image" class="w-full" />
           </div>
         </div>
       </section>
@@ -324,7 +324,7 @@
         >
           <div class="col-span-1 text-center bg-[whitesmoke] rounded-3xl p-5">
             <img
-              src="images/commerce.jpg"
+              src="images/image3.webp"
               alt="image"
               class="w-80 h-56 rounded-3xl mx-auto"
             />
@@ -339,7 +339,7 @@
           </div>
           <div class="col-span-1 text-center bg-[whitesmoke] rounded-3xl p-5">
             <img
-              src="images/humanities.jpg"
+              src="images/image2.webp"
               alt="image"
               class="w-80 h-56 rounded-3xl mx-auto"
             />
@@ -354,7 +354,7 @@
           </div>
           <div class="col-span-1 text-center bg-[whitesmoke] rounded-3xl p-5">
             <img
-              src="images/accounting.jpg"
+              src="images/image1.webp"
               alt="image"
               class="w-80 h-56 rounded-3xl mx-auto"
             />
@@ -661,7 +661,7 @@
       <section class="p-5">
         <div>
           <p class="text-blue-950 text-center font-semibold text-[14px]">
-            Copyright 2024 abslearninghub7025@gmail.com. All Rights Reserved.
+            ©️ AB'S Learning Hub 2024 All rights reserved.
           </p>
         </div>
       </section>
@@ -686,8 +686,9 @@
     </script>
 
     <script>
-      // Smooth scroll function
       function smoothScroll(target, duration) {
+        const header = document.getElementById("header");
+
         var targetSection = document.querySelector(target);
         var targetPosition = targetSection.offsetTop;
         var startPosition = window.pageYOffset;
@@ -700,6 +701,7 @@
           var run = ease(timeElapsed, startPosition, distance, duration);
           window.scrollTo(0, run);
           if (timeElapsed < duration) requestAnimationFrame(animation);
+          header.setAttribute("data-hide", "true");
         }
 
         function ease(t, b, c, d) {
@@ -712,13 +714,12 @@
         requestAnimationFrame(animation);
       }
 
-      // Smooth scroll for all links starting with #
       var links = document.querySelectorAll('a[href^="#"]');
       links.forEach(function (link) {
         link.addEventListener("click", function (e) {
           e.preventDefault();
           var target = this.getAttribute("href");
-          smoothScroll(target, 1000); // Adjust duration as needed
+          smoothScroll(target, 1000);
         });
       });
     </script>
@@ -732,9 +733,9 @@
           const currentScrollTop =
             window.pageYOffset || document.documentElement.scrollTop;
 
+          hideMobileMenu();
           if (currentScrollTop > lastScrollTop) {
             header.setAttribute("data-hide", "true");
-            hideMobileMenu();
           } else {
             header.removeAttribute("data-hide");
           }
